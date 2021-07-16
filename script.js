@@ -22,43 +22,22 @@ else {
 
 }
 
-let playerSelection = 'rock';
 
-function playRound (playerSelection, computerPlay) {
- if (playerSelection == 'rock' && computerPlay == 'paper') {
-     return "Computer throws paper. You lose!";
+
+let playerSelection = 'paper';
+
+function playRound() {
+
+  const computerSelection = computerPlay();
+  console.log(computerSelection);
+
+ if (computerSelection == 'rock' && playerSelection == 'paper') {
+   return 'Computer throws rock. You win!';
+ }
+
+ else {
+   return 'No idea.';
+ }
+ 
 }
 
-else if (playerSelection == 'paper' && computerPlay == 'scissors') {
-    return "Computer throws scissors. You lose!";
-}
-
-else if (playerSelection == 'scissors' && computerPlay == 'rock') {
-    return "Computer throws rock. You lose!";
-}
-
-else if (playerSelection === computerPlay) {
-    return "It's a draw! Try again.";
-}
-
-else {
-    return "Computer throws" + computerPlay + ". You win!";
-}
-
-}
-//play 1 round of rps
-  //compare computerPlay with playerSelect    
-    //this is where to figure out game logic
-        // rock < paper
-        // paper < scissors
-        // scissors < rock
-    //output Win Lose or Draw
-    //for later:
-        //else will be "You can't throw that! Try rock, paper, or scissors."
-
-//figure out playerSelect
-
-
-  //player receives prompt to enter text 'rock,' 'paper,' 'scissors'
-  //must be case insensitive
-    //use toLowerCase, compare with computerPlay outputs
