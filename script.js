@@ -78,11 +78,45 @@ function playRound() {
 }
 */
 //messing around with callbacks
-const playerSelection = 'rock'; 
+let playerSelection = 'scissors'; 
 function playRound (playerSelection, computerSelection) {
   let x = computerSelection();
 
   console.log(x);
   console.log(playerSelection);
 
+  if (x == playerSelection) {
+    return 'A tie! Try again.'
+  }
+
+  if (x == 'rock' && playerSelection == 'paper') {
+    return 'Computer throws rock. You win!';
+  }
+ 
+  else if (x == 'paper' && playerSelection == 'scissors') {
+    return 'Computer throws paper. You win!';
+  }
+ 
+  else if (x == 'scissors' && playerSelection == 'rock') {
+     return 'Computer throws scissors. You win!'
+  }
+ 
+  else if (x == 'paper' && playerSelection == 'rock') {
+     return 'Computer throws paper. You lose!'
+  }
+
+  else if (x == 'rock' && playerSelection == 'scissors') {
+    return 'Computer throws rock. You lose!'
+  }
+
+  else if (x == 'scissors' && playerSelection == 'paper') {
+    return 'Computer throws scissors. You lose!'
+  }
+  else { 
+    return 'Yes, those are different things.'
+  }
 }
+
+
+// rock < paper < scissors
+// but also scissors < rock
