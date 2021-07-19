@@ -78,7 +78,7 @@ function playRound() {
 }
 */
 //messing around with callbacks
-let playerSelection = 'paper'; 
+// let playerSelection = window.prompt('Rock, paper, or scissors?', 'rock'); 
 
 const computerSelection = computerPlay;
 
@@ -132,15 +132,20 @@ function playRound (playerSelection, computerSelection) {
 
 // one day I will know what a loop is
 function game () {
- playRound(playerSelection, computerSelection);
+let y = window.prompt('Rock, paper, or scissors?');
+ playRound(y, computerSelection);
 
- playRound(playerSelection, computerSelection);
+ let z = window.prompt('Rock, paper, or scissors?');
+ playRound(z, computerSelection);
 
- playRound(playerSelection, computerSelection);
+ let a = window.prompt('Rock, paper, or scissors?');
+ playRound(a, computerSelection);
 
- playRound(playerSelection, computerSelection);
+ let b = window.prompt('Rock, paper, or scissors?');
+ playRound(b, computerSelection);
 
- playRound(playerSelection, computerSelection);
+ let c = window.prompt('Rock, paper, or scissors?');
+ playRound(c, computerSelection);
 
 }
 
