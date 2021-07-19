@@ -79,12 +79,17 @@ function playRound() {
 */
 //messing around with callbacks
 let playerSelection = 'scissors'; 
-function playRound (playerSelection, computerSelection) {
-  let x = computerSelection();
 
+const computerSelection = computerPlay;
+
+function playRound (playerSelection, computerSelection) {
+  // let computerSelection = computerPlay();
+
+  const x = computerSelection();
+  console.log(computerSelection);
   console.log(x);
   console.log(playerSelection);
-
+ 
   if (x == playerSelection) {
     return 'A tie! Try again.'
   }
