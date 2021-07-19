@@ -78,50 +78,70 @@ function playRound() {
 }
 */
 //messing around with callbacks
-let playerSelection = 'scissors'; 
+let playerSelection = 'paper'; 
 
 const computerSelection = computerPlay;
 
 function playRound (playerSelection, computerSelection) {
-  // let computerSelection = computerPlay();
+  
 
   const x = computerSelection();
-  console.log(computerSelection);
-  console.log(x);
-  console.log(playerSelection);
+  
+  // console.log(x);
+  console.log('You throw ' + playerSelection + '.');
  
   if (x == playerSelection) {
-    return 'A tie! Try again.'
+    console.log('A tie! Try again.');
+   // return 'A tie! Try again.'
   }
 
-  if (x == 'rock' && playerSelection == 'paper') {
-    return 'Computer throws rock. You win!';
+  else if (x == 'rock' && playerSelection == 'paper') {
+    console.log('Computer throws rock. You win!');
+   // return 'Computer throws rock. You win!';
   }
  
   else if (x == 'paper' && playerSelection == 'scissors') {
-    return 'Computer throws paper. You win!';
+    console.log('Computer throws rock. You win!');
+   // return 'Computer throws paper. You win!';
   }
  
   else if (x == 'scissors' && playerSelection == 'rock') {
-     return 'Computer throws scissors. You win!'
+    console.log('Computer throws scissors. You win!'); 
+  //  return 'Computer throws scissors. You win!'
   }
  
   else if (x == 'paper' && playerSelection == 'rock') {
-     return 'Computer throws paper. You lose!'
+    console.log('Computer throws paper. You lose!');
+   // return 'Computer throws paper. You lose!'
   }
 
   else if (x == 'rock' && playerSelection == 'scissors') {
-    return 'Computer throws rock. You lose!'
+    console.log('Computer throws rock. You lose!');
+   // return 'Computer throws rock. You lose!'
   }
 
   else if (x == 'scissors' && playerSelection == 'paper') {
-    return 'Computer throws scissors. You lose!'
+    console.log('Computer throws scissors. You lose!');
+   // return 'Computer throws scissors. You lose!'
   }
   else { 
-    return 'Yes, those are different things.'
+    console.log('You throw' + playerSelection + '. That\'s not part of the game!');
+   // return 'Yes, those are different things.'
   }
 }
 
+// one day I will know what a loop is
+function game () {
+ playRound(playerSelection, computerSelection);
 
-// rock < paper < scissors
-// but also scissors < rock
+ playRound(playerSelection, computerSelection);
+
+ playRound(playerSelection, computerSelection);
+
+ playRound(playerSelection, computerSelection);
+
+ playRound(playerSelection, computerSelection);
+
+}
+
+
