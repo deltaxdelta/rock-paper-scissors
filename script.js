@@ -84,54 +84,53 @@ const computerSelection = computerPlay;
 
 function playRound (playerSelection, computerSelection) {
   
-
   const x = computerSelection();
-
-  let playerScore = 0;
-  let computerScore = 0;
   
   // console.log(x);
   console.log('You throw ' + playerSelection + '.');
  
   if (x == playerSelection) {
-    console.log('A tie! Try again.');
-    return (playerscore + 0, computerScore + 0);
+    console.log('Computer throws ' + playerSelection + '. A tie!');
+    return playerScore + 0, computerScore + 0;
   }
 
   else if (x == 'rock' && playerSelection == 'paper') {
     console.log('Computer throws rock. You win!');
-    return (playerScore + 1, computerScore + 0);
+    return playerScore + 1, computerScore + 0;
   }
  
   else if (x == 'paper' && playerSelection == 'scissors') {
-    console.log('Computer throws rock. You win!');
-    return (playerScore + 1, computerScore + 0);
+    console.log('Computer throws paper. You win!');
+    return playerScore + 1, computerScore + 0;
   }
  
   else if (x == 'scissors' && playerSelection == 'rock') {
     console.log('Computer throws scissors. You win!'); 
-    return (playerScore + 1, computerScore + 0);
+    return playerScore + 1, computerScore + 0;
   }
  
   else if (x == 'paper' && playerSelection == 'rock') {
     console.log('Computer throws paper. You lose!');
-    return (playerScore + 0, computerScore + 1);
+    return playerScore + 0, computerScore + 1;
   }
 
   else if (x == 'rock' && playerSelection == 'scissors') {
     console.log('Computer throws rock. You lose!');
-    return (playerScore + 0, computerScore + 1);
+    return playerScore + 0, computerScore + 1;
   }
 
   else if (x == 'scissors' && playerSelection == 'paper') {
     console.log('Computer throws scissors. You lose!');
-    return (playerScore + 0, computerScore + 1);
+    return playerScore + 0, computerScore + 1;
   }
   else { 
-    console.log('You throw' + playerSelection + '. That\'s not part of the game!');
-    return (console.log('Why did you throw that? Computer gets 2 points.'), computerscore + 2);
+    console.log('You throw ' + playerSelection + '. That\'s not part of the game!');
+    return (console.log('Why did you throw that? Computer gets 2 points.'), computerScore + 2);
   }
 }
+
+let playerScore = 0;
+let computerScore = 0;
 
 // one day I will know what a loop is
 
@@ -156,6 +155,7 @@ let y = window.prompt('Rock, paper, or scissors?');
 
  playRound(c, computerSelection);
 
+ 
 }
 
 // how to do scoring and winner declaration?
