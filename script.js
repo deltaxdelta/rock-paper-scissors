@@ -133,9 +133,9 @@ function playRound (playerSelection, computerSelection) {
     computerScore++;
   }
   else { 
-    console.log('You throw ' + playerSelection + '. That\'s not part of the game! Computer gets 2 points.');
+    console.log('That\'s not part of the game! Computer gets 2 points.');
     //badInput();
-    computerScore + 2;
+    computerScore += 2;
     
   }
   
