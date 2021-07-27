@@ -190,15 +190,15 @@ function game () {
   
 //can I just throw if/else logic here and return winning message w/o messy array business?
 if (playerScore > computerScore) {
-  console.log('Congratulations, human. You beat the computer.');
+  console.log('Final score: Human: ' + playerScore + ', Computer: ' + computerScore + '. Congratulations, human. You beat the computer.');
 }
 
 else if (playerScore < computerScore) {
-  console.log('The computer won. Better luck next time, human.');
+  console.log('Final score: Human: ' + playerScore + ', Computer: ' + computerScore + '. The computer won. Better luck next time, human.');
 }
 
 else {
-  console.log('A tie? How did you manage that? Play again.');
+  console.log('Final score: Human: ' + playerScore + ', Computer: ' + computerScore + '. A tie? How did you manage that? Play again.');
 }
  // return [playerScore, computerScore];
   //return 'Final score is human: ' + playerScore + ', computer: ' + computerScore;
