@@ -143,10 +143,10 @@ function playRound (playerSelection, computerSelection) {
   return console.log('playerScore is ' + playerScore + ' computerScore is ' + computerScore);
 }
 
-//variables to determine winner after 5 rounds
+//variables to track score
 let playerScore = 0;
 let computerScore = 0;
-//let finalScore = `The final score is ${playerScore} for you, versus ${computerScore} for Computer.`;
+
 
 /* this is from not knowing a lot of JS, preserve for future wonderment
 //functions to add to scores and show new totals
@@ -188,11 +188,29 @@ function game () {
   let c = window.prompt('Rock, paper, or scissors?');
     playRound(c, computerSelection);
   
-  
-  return 'Final score is human: ' + playerScore + ', computer: ' + computerScore;
+//can I just throw if/else logic here and return winning message w/o messy array business?
+if (playerScore > computerScore) {
+  console.log('Congratulations, human. You beat the computer.');
 }
 
+else if (playerScore < computerScore) {
+  console.log('The computer won. Better luck next time, human.');
+}
 
+else {
+  console.log('A tie? How did you manage that? Play again.');
+}
+ // return [playerScore, computerScore];
+  //return 'Final score is human: ' + playerScore + ', computer: ' + computerScore;
+  
+}
+
+/* may not need these
+//getting scores from returned array in game()
+let getFinal = game();
+let playerFinal = getFinal[0];
+let computerFinal = getFinal[1];
+*/
 
 // how to do scoring and winner declaration?
 
@@ -202,12 +220,16 @@ Create a variable, computerScore
 
 check results of each playRound -- should go in game function, right?
   how do I get the result? --where does that go?
-   can I return 1 + playerScore/computerScore w/ each message?
+   can I return 1 + playerScore/computerScore w/ each message? -- yes, use ++
  if there's a 'you win' result, +1 to playerscore
  if there's a 'you lose' result +1 to computerScore
- else +0 to both (tie)
+ else +0 to both (tie) aka do nothing
 
 compare playerScore to computerScore - display them too for funsies
  largest value is winner
 Display finalScore, plus computer or player winning message
+ need to get playerScore and computerScore out of game()
+  JS can't return multiple values, but it can return an array
+  Need to build array to hold final values of playerScore and computerScore
+ Then need function to compare and output winner declaration message
 */ 
