@@ -86,6 +86,7 @@ const computerSelection = computerPlay;
 
 //compares player throw to computer throw and outputs win/lose/tie messages
 function playRound (playerSelection, computerSelection) {
+
   
   const x = computerSelection();
   
@@ -143,10 +144,17 @@ function playRound (playerSelection, computerSelection) {
   return console.log('playerScore is ' + playerScore + ' computerScore is ' + computerScore);
 }
 
-//variables to track score
-let playerScore = 0;
-let computerScore = 0;
 
+  //variables to track score
+  let playerScore = 0;
+  let computerScore = 0;
+
+  //resets score variables at end of game
+
+  function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+  }
 
 /* this is from not knowing a lot of JS, preserve for future wonderment
 //functions to add to scores and show new totals
@@ -200,9 +208,10 @@ else if (playerScore < computerScore) {
 else {
   console.log('Final score: Human: ' + playerScore + ', Computer: ' + computerScore + '. A tie? How did you manage that? Play again.');
 }
- // return [playerScore, computerScore];
+//can I return something that will reset the game? 
+// return [playerScore, computerScore];
   //return 'Final score is human: ' + playerScore + ', computer: ' + computerScore;
-  
+  return resetScore();
 }
 
 /* may not need these
