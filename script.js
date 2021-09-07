@@ -242,3 +242,95 @@ Display finalScore, plus computer or player winning message
   Need to build array to hold final values of playerScore and computerScore
  Then need function to compare and output winner declaration message
 */ 
+
+
+//Now for some UI stuff
+
+// display scores
+
+const humanScore = document.getElementById('humanScore');
+const compyScore = document.getElementById('compyScore');
+
+humanScore.innerText = playerScore;
+compyScore.innerText = computerScore;
+
+//each button inputs player throw into playRound
+
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click', rockButton);
+paper.addEventListener('click', paperButton);
+scissors.addEventListener('click', scissorsButton);
+
+function rockButton() {
+
+  if (playerScore >=3 || computerScore >=3) return;
+
+  else {
+  playRound('rock', computerSelection);
+  humanScore.innerText = playerScore;
+  compyScore.innerText = computerScore;
+  }
+}
+
+//button clicks will check score and stop play when either hits 3 (screw the tutorial, I'm doing best of 5)
+
+function paperButton() {
+
+  if (playerScore >=3 || computerScore >=3) return;
+
+  else {
+  playRound('paper', computerSelection);
+  humanScore.innerText = playerScore;
+  compyScore.innerText = computerScore;
+  }
+}
+
+function scissorsButton() {
+  if (playerScore >=3 || computerScore >=3) return;
+
+  else {
+  playRound('scissors', computerSelection);
+  humanScore.innerText = playerScore;
+  compyScore.innerText = computerScore;
+  }
+}
+
+
+//determine winner and display message
+
+rock.addEventListener('click', checkScore);
+paper.addEventListener('click', checkScore);
+scissors.addEventListener('click', checkScore);
+
+function checkScore() {
+  if(playerScore == 3) {
+    //you a winnah
+    document.getElementById('finalScore').innerText = 'You won!'
+  }
+
+  else if (computerScore == 3){
+    //you lose hahaha
+    document.getElementById('finalScore').innerText = 'The computer won. Try again!'
+   }
+   else{//do nuthin}
+  }
+}
+
+
+//reset scores button
+
+
+const newGame = document.getElementById('newGame');
+
+newGame.addEventListener('click', startNewGame);
+
+function startNewGame() {
+  resetScore();
+  humanScore.innerText = 0;
+  compyScore.innerText = 0;
+  document.getElementById('finalScore').innerText = '';
+
+}
