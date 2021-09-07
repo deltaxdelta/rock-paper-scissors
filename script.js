@@ -89,49 +89,57 @@ function playRound (playerSelection, computerSelection) {
 
   
   const x = computerSelection();
+  showComputerThrow(x);
   
-  // console.log(x);
+  //console.log(x);
   console.log('You throw ' + playerSelection + '.');
  
   if (x == playerSelection) {
     console.log('Computer throws ' + playerSelection + '. A tie!');
     //console.log(`Current score is ${playerScore} for you, ${computerScore} for computer.`);
+    
   }
 
   else if (x == 'rock' && playerSelection == 'paper') {
     console.log('Computer throws rock. You win!');
     //addPlayerScore();
      playerScore++;
+     
   }
  
   else if (x == 'paper' && playerSelection == 'scissors') {
     console.log('Computer throws paper. You win!');
     //addPlayerScore();
      playerScore++;
+     
   }
  
   else if (x == 'scissors' && playerSelection == 'rock') {
     console.log('Computer throws scissors. You win!'); 
     //addPlayerScore();
     playerScore++;
+    
   }
  
   else if (x == 'paper' && playerSelection == 'rock') {
     console.log('Computer throws paper. You lose!');
     //addcomputerScore();
     computerScore++;
+    
   }
 
   else if (x == 'rock' && playerSelection == 'scissors') {
     console.log('Computer throws rock. You lose!');
     //addcomputerScore();
     computerScore++;
+    
   }
 
   else if (x == 'scissors' && playerSelection == 'paper') {
     console.log('Computer throws scissors. You lose!');
     //addcomputerScore();
     computerScore++;
+    
   }
   else { 
     console.log('That\'s not part of the game! Computer gets 2 points.');
@@ -142,6 +150,7 @@ function playRound (playerSelection, computerSelection) {
   
   //this line works
   return console.log('playerScore is ' + playerScore + ' computerScore is ' + computerScore);
+  
 }
 
 
@@ -264,6 +273,16 @@ rock.addEventListener('click', rockButton);
 paper.addEventListener('click', paperButton);
 scissors.addEventListener('click', scissorsButton);
 
+//display what the computer did for added human satisfaction
+let computerRound = document.getElementById('computerRound');
+//this gets called inside playRound
+function showComputerThrow(rps) {
+  computerRound.innerText = 'The computer throws ' + rps + '.';
+
+}
+
+//button clicks will check score and stop play when either hits 3 (screw the tutorial, I'm doing best of 5)
+
 function rockButton() {
 
   if (playerScore >=3 || computerScore >=3) return;
@@ -272,10 +291,9 @@ function rockButton() {
   playRound('rock', computerSelection);
   humanScore.innerText = playerScore;
   compyScore.innerText = computerScore;
+  
   }
 }
-
-//button clicks will check score and stop play when either hits 3 (screw the tutorial, I'm doing best of 5)
 
 function paperButton() {
 
@@ -285,6 +303,7 @@ function paperButton() {
   playRound('paper', computerSelection);
   humanScore.innerText = playerScore;
   compyScore.innerText = computerScore;
+ 
   }
 }
 
@@ -295,8 +314,11 @@ function scissorsButton() {
   playRound('scissors', computerSelection);
   humanScore.innerText = playerScore;
   compyScore.innerText = computerScore;
+  
   }
 }
+
+
 
 
 //determine winner and display message
@@ -332,5 +354,6 @@ function startNewGame() {
   humanScore.innerText = 0;
   compyScore.innerText = 0;
   document.getElementById('finalScore').innerText = '';
+  computerRound.innerText = '';
 
 }
