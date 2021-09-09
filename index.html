@@ -4,36 +4,46 @@
   
   <meta charset="utf-8">
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
 
   
 </head>
 <body>
-<div>
+<div class='container'>
  <div> <h1>Play Rock Paper Scissors against your computer!</h1> </div>
-  <div><p>Winner is best of 5. Ties don't add to the scores.</p> </div>
+  <div><p>Winner is best of 5. Ties don't add to the scores.</p> 
+    
+    </div>
 </div>
 
-<div>
-  <button id='rock'>Rock</button>
-  <button id='paper'>Paper</button>
-  <button id='scissors'>Scissors</button>
+<div class='container row'>
+  <div><button class='playerInput' id='rock'>&#x1FAA8</button></div>
+  <div><button class='playerInput' id='paper'>&#x1F4DC</button></div>
+  <div><button class='playerInput' id='scissors'>&#x2702</button></div>
 </div>
 
-  <div id='computerRound'>
+  <div class='container'>
+    <div>VS</div> 
+    
+    <div class='container' id='monitorFrame'>
+      <div class='container' id='computerRound'></div>
+    </div>
+    <div id='monitorStand'></div>
 
   </div>
 
-  <div id='scoreboard'>
+  <div class='container' id='scoreboard'>
 
-    Current score is Human: <span id='humanScore'>0</span> Computer: <span id='compyScore'>0</span>
+    <p>Current score is Human: <span id='humanScore'>0</span> Computer: <span id='compyScore'>0</span></p>
 
     <div id='finalScore'>
 
     </div>
   </div>
 
+  <div class='container'>
   <button id='newGame'>New Game!</button>
- 
+ </div>
   <script src="script.js"></script>
 </body>
 </html>

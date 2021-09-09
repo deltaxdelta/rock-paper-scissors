@@ -269,19 +269,45 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 
-rock.addEventListener('click', rockButton);
-paper.addEventListener('click', paperButton);
-scissors.addEventListener('click', scissorsButton);
+rock.addEventListener('mouseup', rockButton);
+paper.addEventListener('mouseup', paperButton);
+scissors.addEventListener('mouseup', scissorsButton);
 
 //display what the computer did for added human satisfaction
 let computerRound = document.getElementById('computerRound');
 //this gets called inside playRound
 function showComputerThrow(rps) {
-  computerRound.innerText = 'The computer throws ' + rps + '.';
+  let emoji = '';
 
+  if (rps == 'rock') {
+     emoji += String.fromCodePoint('0x1FAA8');
+  }
+
+  else if (rps == 'paper') {
+    emoji += String.fromCodePoint('0x1F4DC');
+  }
+
+  else {
+    emoji += String.fromCodePoint('0x2702');
+  }
+  computerRound.innerText = emoji;
 }
 
-//button clicks will check score and stop play when either hits 3 (screw the tutorial, I'm doing best of 5)
+//clear computer throw so it looks like something new loads on repeated throws
+
+rock.addEventListener('mousedown', clearCompy);
+paper.addEventListener('mousedown', clearCompy);
+scissors.addEventListener('mousedown', clearCompy);
+
+function clearCompy() {
+  if (document.getElementById('finalScore').innerText !== '') {}
+  else {
+    computerRound.innerText = '';}
+     
+}
+
+
+//button mouseups will check score and stop play when either hits 3 (screw the tutorial, I'm doing best of 5)
 
 function rockButton() {
 
@@ -337,7 +363,7 @@ function checkScore() {
     //you lose hahaha
     document.getElementById('finalScore').innerText = 'The computer won. Try again!'
    }
-   else{//do nuthin}
+   else{ //do nuthin
   }
 }
 
@@ -347,7 +373,7 @@ function checkScore() {
 
 const newGame = document.getElementById('newGame');
 
-newGame.addEventListener('click', startNewGame);
+newGame.addEventListener('mouseup', startNewGame);
 
 function startNewGame() {
   resetScore();
