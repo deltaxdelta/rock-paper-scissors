@@ -356,12 +356,12 @@ scissors.addEventListener('click', checkScore);
 function checkScore() {
   if(playerScore == 3) {
     //you a winnah
-    document.getElementById('finalScore').innerText = 'You won!'
+    document.getElementById('finalScore').innerText = 'WINNER: HUMAN';
   }
 
   else if (computerScore == 3){
     //you lose hahaha
-    document.getElementById('finalScore').innerText = 'The computer won. Try again!'
+    document.getElementById('finalScore').innerText = 'WINNER: COMPUTER';
    }
    else{ //do nuthin
   }

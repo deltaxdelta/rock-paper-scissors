@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'NBP Sydnie2 Scoreboard Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('NBP Sydnie2 Scoreboard Regular'), url('nbp-sydnie2-scoreboard-cufonfonts-webfont/sydsc_0.woff') format('woff');
+    }
+
+body {
+    font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -15,13 +29,13 @@
     font-size: xx-large;
     margin: 20px;
     border: none;
-    background-color: aliceblue;
+    background-color:lightgoldenrodyellow;
     border-radius: 3px;
     box-shadow: 5px 5px 5px rgb(97, 97, 97);
 }
 
 .playerInput:hover {
-    background-color: rgb(204, 213, 221);
+    background-color: rgb(214, 214, 174);
 
 }
 
@@ -30,16 +44,17 @@
     box-shadow: 0px 1px 5px rgb(97, 97, 97);
 }
 
-#monitorFrame {
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgb(214, 204, 185);
-    background-color: rgb(235, 224, 205);
-    margin: 20px;
-    margin-bottom: 0px;
+
+img {
+    max-height: 210px;
 }
+
+#vs {
+   font-size: 3em;
+}
+
 #computerRound {
-    height: 120px;
+    height: 90px;
     width: 120px;
     border-style: solid;
     border-color:rgb(182, 181, 181);
@@ -48,13 +63,51 @@
     margin: 15px;
     justify-content: center;
     font-size: 5em;
+    position: relative;
+    margin-top: -185px;
+    z-index: -1;
+    float: left;
 }
 
-#monitorStand {
-    border-style: solid;
-    border-radius: 2px;
-    border-color: rgb(190, 180, 161);
-    background-color: rgb(214,204,185);
-    width: 110px;
-    height: 20px;
+
+#scoreboard {
+    margin-top: 50px;
+    
+    font-family: 'NBP Sydnie2 Scoreboard Regular', Helvetica, sans-serif;
+    font-size: 3em;
+    color:goldenrod;
+    justify-content: space-evenly;
+}
+
+.score {
+    margin-bottom: 0px;
+}
+
+#finalScore {
+    font-family: 'NBP Sydnie2 Scoreboard Regular', Helvetica, sans-serif;
+    color:goldenrod;
+    font-size: 1em;
+    margin-top: 48px;
+}
+
+#newGame {
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    background-image: linear-gradient(rgb(211, 210, 210), rgb(189, 189, 189), gray);
+    font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;
+}
+
+#newGame:hover {
+    background-image: linear-gradient(rgb(187, 187, 187), rgb(165, 165, 165), rgb(112, 112, 112));
+    font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;
+}
+
+#newGame:active {
+    background-image: linear-gradient(gray,rgb(189, 189, 189),rgb(211, 210, 210));
+    font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;
 }
