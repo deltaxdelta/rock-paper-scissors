@@ -1,3 +1,3 @@
 # rock-paper-scissors
-TOP JS assignment
+JS assignment from The Odin Project
 A vanilla JS app that plays rock paper scissors agains the computer
